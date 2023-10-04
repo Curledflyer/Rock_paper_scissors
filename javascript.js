@@ -27,7 +27,8 @@ let computer = getComputerChoice();
 Based on the choices return a string to declare either the winner or a draw. */
 
 function round() {
-let player = prompt("Enter your choice of rock, paper, or scissors");
+let playerChoice = prompt("Enter your choice of rock, paper, or scissors");
+let player = playerChoice.toLowerCase();
 if ((player == "rock" || player == "Rock") && computer == "Rock") {
     console.log(computer);
     console.log("It's a draw, both choose rock");
