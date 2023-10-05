@@ -23,15 +23,16 @@ let result;
 const computer = getComputerChoice();
 let playerChoice = prompt("Enter your choice of rock, paper, or scissors");
 let player = playerChoice.toLowerCase();
-
-
-function playRound(a, b) {
+let comScore = 0;
+function playRound() {
    
     if (player == "rock" && computer == "Rock") {
         return "It's a draw! both chose Rock";
     
     } else if  (player == "scissors" && computer == "Rock") { 
+        comScore = ++comScore;
        return "You lose! rock beats scissors";
+
     
     } else if  (player == "scissors" && computer == "Paper") { 
        return "You win! scissors beats paper";
@@ -58,4 +59,9 @@ function playRound(a, b) {
         console.log("Try again. please only input either Rock, Paper, or Scissors!");
     }
     }
-console.log(playRound(player, computer))
+function game() {
+    console.log(playRound(player, computer));
+    console.log(getComputerChoice());
+}
+console.log(game() `current score is ${comScore}.`);
+
